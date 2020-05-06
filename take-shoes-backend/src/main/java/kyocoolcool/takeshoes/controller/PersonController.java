@@ -29,7 +29,7 @@ public class PersonController {
         return person;
     }
 
-    @RequestMapping("/list")
+    @RequestMapping("/listPerson")
     public Object list() {
         Iterable<Person> users = personRepository.findAll();
         return users;

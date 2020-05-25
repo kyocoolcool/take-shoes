@@ -1,8 +1,11 @@
 package kyocoolcool.takeshoes.repository;
 
+import kyocoolcool.takeshoes.entity.Book;
 import kyocoolcool.takeshoes.entity.Reader;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
+
+import java.util.List;
 
 /**
  * @author Chris Chen
@@ -13,4 +16,5 @@ import org.springframework.stereotype.Repository;
  **/
 @Repository
 public interface ReaderRepository extends JpaRepository<Reader, String> {
+    List<Reader> findByUsername(String userName);
 }

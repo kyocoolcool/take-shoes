@@ -40,10 +40,14 @@ public class ReadingListController {
         return "readingList";
     }
 
-    @RequestMapping(value = "/{reader}", method = RequestMethod.POST)
-    public String addToReadingList(@PathVariable("reader") String reader, Book book) {
+    @RequestMapping(value = "/nice", method = RequestMethod.POST)
+//    public String addToReadingList(@PathVariable("reader") String reader, Book book) {
+    public String addToReadingList( Book book) {
+        String reader = "nice";
+        System.out.println(reader);
         book.setReader(reader);
         readingListRepository.save(book);
-        return "redirect:/{reader}";
+        System.out.println("hello");
+        return "redirect:/book/nice";
     }
 }
